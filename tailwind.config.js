@@ -5,6 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      "vatan": ['Roboto', 'serif']
+    }
   },
   plugins: [],
 }
+
+

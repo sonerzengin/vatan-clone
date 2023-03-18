@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+@layer base {
+  body{
+    font-family: 'vatan', sans-serif !important;
+    color: #434343 !important;
+  }
+  ::selection {
+    background-color: Gainsboro;
+  }
+
+  .prev {
+    @apply text-white py-8 px-3 bg-black opacity-40 hover:opacity-100 transition-all rounded-lg ;
+  }
+  .next {
+    @apply text-white py-8 px-3 bg-black opacity-40 hover:opacity-100 transition-all rounded-lg;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #fff !important;
+}
+}

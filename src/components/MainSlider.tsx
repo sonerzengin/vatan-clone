@@ -1,67 +1,113 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/free-mode';
-import { CSSProperties } from 'react';
-const img1 = require('../assets/598x507.png');
-const img2 = require('../assets/293x507.png');
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/free-mode";
+import "swiper/css/effect-coverflow";
+import { IoMdArrowDropright } from "react-icons/io";
+import { IoMdArrowDropleft } from "react-icons/io";
+import { CSSProperties, useCallback, useRef } from "react";
+
+const img1 = require("../assets/598x507.png");
+const img2 = require("../assets/293x507.png");
 
 interface SwiperStyle extends CSSProperties {
-  '--swiper-navigation-color'?: string;
-  '--swiper-pagination-color'?: string;
+  "--swiper-navigation-color"?: string;
+  "--swiper-pagination-color"?: string;
+  "--swiper-pagination-bullet-inactive-color"?: string;
 }
 
 interface Slide {
-    id: number;
-    img: string;
-  }
+  id: number;
+  img1: string;
+  img2: string;
+}
 
 const MainSlider = () => {
   const slides: Slide[] = [
-  {
-    id: 1,
-    img: img1,
-  },
-  {
-    id: 2,
-    img: img2,
-  },
-  {
-    id: 3,
-    img: img2,
-  },
-];
+    {
+      id: 1,
+      img1: img1,
+      img2: img2,
+    },
+    {
+      id: 2,
+      img1: img1,
+      img2: img2,
+    },
+    {
+      id: 3,
+      img1: img1,
+      img2: img2,
+    },
+    {
+      id: 4,
+      img1: img1,
+      img2: img2,
+    },
+    {
+      id: 5,
+      img1: img1,
+      img2: img2,
+    },
+  ];
 
   return (
-    <div className="container mx-auto bg-blue-500 max-h-[507px]">
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={10}
-        freeMode={true}
-        pagination={{ clickable: true }}
-        slidesPerView={2}
-        style={
-          {
-            '--swiper-navigation-color': '#fff',
-            '--swiper-pagination-color': '#fff',
-          } as SwiperStyle
-        }
-        loop={true}
-      >
-        {slides.map((slide, key) => (
-          <SwiperSlide key={slide.id}>
-            <img
-              src={slide.img}
-              alt="bareli abla"
-              className="w-full"
-              loading="lazy"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className="bg-[#1564c0] ">
+      <div className="container mx-auto flex items-center">
+        <div className="prev inline-block">
+          <IoMdArrowDropleft />
+        </div>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={10}
+          freeMode={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={{
+            prevEl: ".prev",
+            nextEl: ".next",
+          }}
+          style={
+            {
+              paddingBottom: "2.5rem",
+              "--swiper-pagination-color": "#FFFFFF",
+            } as SwiperStyle
+          }
+          centeredSlides={true}
+          slidesPerView={1}
+          effect={"coverflow"}
+          grabCursor={true}
+          coverflowEffect={{
+            rotate: 30,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          loop={true}
+        >
+          {slides.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              <div className="justify-center flex justify-center items-center gap-x-2">
+                <div>
+                  <img src={slide.img1} alt="slide-img" loading="lazy" />
+                </div>
+                <div className="flex gap-x-2">
+                  <img src={slide.img2} alt="" />
+                  <img src={slide.img2} alt="" />
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="next">
+          <IoMdArrowDropright />
+        </div>
+      </div>
     </div>
   );
 };
