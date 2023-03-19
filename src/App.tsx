@@ -1,7 +1,8 @@
 import './App.css';
-import Header from './components/Header';
+import Header from './components/Header/index';
 import MainSlider from './components/MainSlider';
 import OneCikan from './components/OneCikan';
+import CokSatanlar from './components/CokSatanlar';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <MainSlider />
       <OneCikan />
+      <CokSatanlar />
     </div>
   );
 }

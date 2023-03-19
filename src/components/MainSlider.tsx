@@ -8,7 +8,7 @@ import "swiper/css/free-mode";
 import "swiper/css/effect-coverflow";
 import { IoMdArrowDropright } from "react-icons/io";
 import { IoMdArrowDropleft } from "react-icons/io";
-import { CSSProperties, useCallback, useRef } from "react";
+import { CSSProperties } from "react";
 
 const img1 = require("../assets/598x507.png");
 const img2 = require("../assets/293x507.png");
@@ -55,11 +55,11 @@ const MainSlider = () => {
   ];
 
   return (
-    <div className="bg-[#1564c0] ">
+    <div className="bg-[#1564c0] flex items-center mt-12 py-5">
+      <div className="prev inline-block">
+        <IoMdArrowDropleft />
+      </div>
       <div className="container mx-auto flex items-center">
-        <div className="prev inline-block">
-          <IoMdArrowDropleft />
-        </div>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={10}
@@ -92,7 +92,7 @@ const MainSlider = () => {
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div className="justify-center flex justify-center items-center gap-x-2">
+              <div className="flex justify-between items-center">
                 <div>
                   <img src={slide.img1} alt="slide-img" loading="lazy" />
                 </div>
@@ -104,9 +104,9 @@ const MainSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="next">
-          <IoMdArrowDropright />
-        </div>
+      </div>
+      <div className="next">
+        <IoMdArrowDropright />
       </div>
     </div>
   );

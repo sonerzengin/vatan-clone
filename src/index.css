@@ -20,6 +20,12 @@
   .next {
     @apply text-white py-8 px-3 bg-black opacity-40 hover:opacity-100 transition-all rounded-lg;
   }
+  .left {
+    @apply text-white py-8 px-3 bg-gray-400 opacity-40 hover:opacity-100 transition-all rounded-sm mr-1;
+  }
+  .right {
+    @apply text-white py-8 px-3 bg-gray-400 opacity-40 hover:opacity-100 transition-all rounded-sm ml-1;
+  }
   .swiper-pagination-bullet-active {
     background-color: #fff !important;
 }
