@@ -56,7 +56,7 @@ const MainSlider = () => {
 
   return (
     <div className="bg-[#1564c0] flex items-center mt-12 py-5">
-      <div className="prev inline-block">
+      <div className="prev lg:inline-block hidden ">
         <IoMdArrowDropleft />
       </div>
       <div className="container mx-auto flex items-center">
@@ -92,20 +92,20 @@ const MainSlider = () => {
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div className="flex justify-between items-center">
+              <div className="container mx-auto flex flex-col lg:flex-row justify-center w-full gap-x-2 gap-y-2 lg:gap-y-0 items-center">
                 <div>
-                  <img src={slide.img1} alt="slide-img" loading="lazy" />
+                  <img src={slide.img1} alt="slide-img" loading="lazy" className="max-w-[406px] lg:max-w-full" />
                 </div>
                 <div className="flex gap-x-2">
-                  <img src={slide.img2} alt="" />
-                  <img src={slide.img2} alt="" />
+                  <img src={slide.img2} alt="" className="max-w-[200px] lg:max-w-full"/>
+                  <img src={slide.img2} alt="" className="max-w-[200px] lg:max-w-full"/>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      <div className="next">
+      <div className="next lg:inline-block hidden">
         <IoMdArrowDropright />
       </div>
     </div>

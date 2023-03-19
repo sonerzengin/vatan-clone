@@ -11,6 +11,7 @@ interface Props {
 
 const ProductCard = ({ product }: Props) => {
   const [number, setNumber] = useState<number | null>(null);
+  const [added, setAdded] = useState<boolean>(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,7 +30,9 @@ const ProductCard = ({ product }: Props) => {
       id: product.id,
       title: product.title,
       price: product.price,
+      img: product.img
     }))
+    setAdded(true)
   }
 
 
@@ -84,7 +87,7 @@ const ProductCard = ({ product }: Props) => {
             <BsArrowLeftRight />
           </div>
           <div onClick={addToCartHandler} className="basis-4/5 text-sm font-semibold flex justify-center items-center bg-[#2196f3] py-3">
-            Sepete Ekle
+            {!added ? 'Sepete Ekle': 'Sepete Eklendi'}
           </div>
         </div>
       </div>

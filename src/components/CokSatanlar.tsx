@@ -1,7 +1,5 @@
-import React from "react";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import ProductCard from "./ProductCard";
-import { products } from "../utils/data";
+
 import CarouselProducts from "./CarouselProducts";
 
 const OneCikan = () => {

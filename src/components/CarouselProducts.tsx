@@ -19,7 +19,23 @@ const CarouselProducts = () => {
         <IoMdArrowDropleft />
       </div>
       <Swiper
-        slidesPerView={5}
+      
+        breakpoints={{
+          // when window width is >= 640px
+          640: {
+            width: 640,
+            slidesPerView: 1,
+          },
+          // when window width is >= 768px
+          768: {
+            width: 768,
+            slidesPerView: 3,
+          },
+          1920: {
+            width: 1920,
+            slidesPerView: 5,
+          },
+        }}
         spaceBetween={0}
         freeMode={true}
         navigation={{

@@ -15,7 +15,7 @@ const OneCikan = () => {
           <HiOutlineArrowNarrowRight />
         </div>
       </div>
-      <div className="container mx-auto grid grid-cols-5 grid-rows-2">
+      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-5 lg:grid-rows-2">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
