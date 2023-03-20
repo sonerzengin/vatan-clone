@@ -14,7 +14,7 @@ import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 
 const CarouselProducts = () => {
   return (
-    <div className=" flex items-center">
+    <div className="container mx-auto flex items-center">
       <div className="left inline-block">
         <IoMdArrowDropleft />
       </div>
@@ -29,7 +29,7 @@ const CarouselProducts = () => {
           // when window width is >= 768px
           768: {
             width: 768,
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
           1920: {
             width: 1920,

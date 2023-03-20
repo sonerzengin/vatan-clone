@@ -2,7 +2,7 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 import CarouselProducts from "./CarouselProducts";
 
-const OneCikan = () => {
+const CokSatanlar = () => {
   return (
     <div className="py-16">
       <div className="container mx-auto flex justify-between mb-5">
@@ -19,4 +19,4 @@ const OneCikan = () => {
   );
 };
 
-export default OneCikan;
+export default CokSatanlar;
